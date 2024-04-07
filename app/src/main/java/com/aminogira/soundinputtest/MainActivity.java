@@ -16,6 +16,8 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     private TextView messageTextView;
+    private TextView appStatedMessage;
+
     private MediaRecorder mediaRecorder;
     private boolean isListening = false;
 
@@ -25,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         messageTextView = findViewById(R.id.messageTextView);
+        appStatedMessage = findViewById(R.id.appStatedMessage);
+
+        appStatedMessage.setText("App Ready For Listen");
 
         // Check for microphone permission
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
